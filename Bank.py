@@ -11,7 +11,6 @@ class Bank:
         self.customers = []
         self.branches = []
         self.payroll = None
-        self.pay_schedule = None
 
     def setup_branch(self, branch: Branch):
         self.branches.append(branch)
@@ -50,5 +49,4 @@ class Bank:
 
     def change_payroll_date(self, payroll: Payroll, date: str, staff_category: str):
         self.payroll = payroll
-        self.pay_schedule = payroll.get_schedule(staff_category)
-        self.pay_schedule.set_pay_date(date)
+        self.payroll.update_category_date(staff_category, date)
