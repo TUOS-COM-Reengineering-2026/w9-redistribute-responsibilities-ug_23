@@ -1,7 +1,7 @@
 class Customer:
-    def __init__(self, name: str, address: str, phone_number: str):
+    def __init__(self, name: str, address: str = "NO ADDRESS", phone_number: str = "NO PHONE NUMBER"):
         self._name = name
-        self._address = address,
+        self._address = address
         self._phone_number = phone_number
 
     def set_name(self, name: str):
