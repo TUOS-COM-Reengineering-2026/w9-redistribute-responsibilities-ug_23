@@ -32,3 +32,6 @@ class Account:
     def add_funds(self, amount: float):
         self.set_balance(self.get_balance() + amount)
  
+    def close_account(self):
+        self.set_balance(0)
+        self.set_customer(None)

@@ -45,8 +45,7 @@ class Bank:
         account.add_funds(amount)
 
     def close_account(self, account: Account):
-        account.set_customer(None)
-        account.set_balance(0)
+        account.close_account()
         self.accounts.remove(account)
 
     def change_payroll_date(self, payroll: Payroll, date: str, staff_category: str):
