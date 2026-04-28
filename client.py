@@ -46,10 +46,10 @@ def client():
     assert account_alice_new in bank.accounts
     assert len(bank.customers) == 1
 
-    bank.add_funds(account=account_alice, amount=1000)
+    account_alice.add_funds(amount=1000)
     assert account_alice.get_balance() == 1000.0
 
-    bank.add_interest(account=account_alice)
+    account_alice.add_interest()
     assert account_alice.get_balance() == 1000.0 + 0.05 * 1000.0
 
     bank.close_account(account=account_alice)

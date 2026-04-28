@@ -9,8 +9,6 @@ class Bank:
     def __init__(self):
         self.accounts = []
         self.customers = []
-        self.customer_addresses = {}  # key: customer, value: address
-        self.customer_phone_numbers = {}  # key: customer, value: phone number
         self.branches = []
         self.payroll = None
 
