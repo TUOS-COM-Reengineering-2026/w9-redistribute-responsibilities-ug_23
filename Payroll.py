@@ -11,5 +11,5 @@ class Payroll:
         return self.pay_schedules.get(staff_category)
 
     def get_staff_category_pay_day(self, staff_category):
-        self.pay_dates = self.pay_schedules.get(staff_category).get_pay_date()
+        self.pay_dates =self.get_schedule(staff_category).get_pay_date()
         return self.pay_dates
