@@ -38,15 +38,13 @@ class Bank:
     def obtain_balance(self, account: Account):
         return account.get_balance()
 
+    # RP2 - Moved behaviour to Account.py
     def add_interest(self, account: Account):
-        balance = account.get_balance()
-        interest_rate = account.get_interest_rate()
-        interest = balance * interest_rate
-        account.set_balance(balance + interest)
+        account.add_interest()
 
+    # RP2 - Moved behaviour to Account.py
     def add_funds(self, account: Account, amount: float):
-        balance = account.get_balance()
-        account.set_balance(balance + amount)
+        account.add_funds(amount)
 
     def close_account(self, account: Account):
         account.set_customer(None)
