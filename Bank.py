@@ -32,8 +32,6 @@ class Bank:
 
         if customer not in self.customers:
             self.customers.append(customer)
-            self.customer_addresses[customer] = "NO ADDRESS"  # default address
-            self.customer_phone_numbers[customer] = "NO PHONE NUMBER"  # default phone number
 
     def obtain_balance(self, account: Account):
         return account.get_balance()
