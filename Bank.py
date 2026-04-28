@@ -44,6 +44,7 @@ class Bank:
     def add_funds(self, account: Account, amount: float):
         account.add_funds(amount)
 
+    # RP2 - Moved behaviour to Account.py
     def close_account(self, account: Account):
         account.close_account()
         self.accounts.remove(account)
