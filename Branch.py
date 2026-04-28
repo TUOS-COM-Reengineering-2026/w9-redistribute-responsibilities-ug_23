@@ -20,5 +20,8 @@ class Branch:
     def add_staff_member(self, staff: Staff):
         self.get_staff().append(staff)
 
+    def remove_staff_member(self, staff: Staff):
+        self.get_staff().remove(staff)
+
     def change_opening_time(self, time: str):
         self.opening_time = time

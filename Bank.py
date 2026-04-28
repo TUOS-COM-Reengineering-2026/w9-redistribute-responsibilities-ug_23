@@ -23,8 +23,8 @@ class Bank:
         self.branches.remove(branch)
 
     def transfer_staff_member(self, from_branch: Branch, to_branch: Branch, staff: Staff):
-        from_branch.get_staff().remove(staff)
-        to_branch.get_staff().append(staff)
+        from_branch.remove_staff_member(staff)
+        to_branch.add_staff_member(staff)
 
     def setup_new_account(self, account: Account, customer: Customer):
         account.set_customer(customer)
