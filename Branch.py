@@ -6,6 +6,7 @@ class Branch:
     def __init__(self, location):
         self._location = location
         self._staff = []
+        self.opening_time = "9:00"  # default opening time
 
     def get_location(self):
         return self._location
@@ -15,3 +16,9 @@ class Branch:
 
     def get_staff(self):
         return self._staff
+    
+    def add_staff_member(self, staff: Staff):
+        self.get_staff().append(staff)
+
+    def change_opening_time(self, time: str):
+        self.opening_time = time

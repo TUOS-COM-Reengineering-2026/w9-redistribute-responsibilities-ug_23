@@ -14,19 +14,19 @@ def client():
     branch_london = Branch(location="London")
     bank.setup_branch(branch_london)
     assert branch_london in bank.branches
-    assert bank.branch_opening_times[branch_london] == "9:00"
+    assert branch_london.opening_time == "9:00"
 
-    bank.change_opening_time(branch=branch_london, time="8:00")
-    assert bank.branch_opening_times[branch_london] == "8:00"
+    branch_london.change_opening_time(time="8:00")
+    assert branch_london.opening_time == "8:00"
 
     staff_john = Staff(name="John")
-    bank.add_staff_member(branch=branch_london, staff=staff_john)
+    branch_london.add_staff_member(staff=staff_john)
     assert staff_john in branch_london.get_staff()
 
     branch_sheffield = Branch(location="Sheffield")
     bank.setup_branch(branch_sheffield)
     assert branch_sheffield in bank.branches
-    assert bank.branch_opening_times[branch_sheffield] == "9:00"
+    assert branch_sheffield.opening_time == "9:00"
 
     bank.close_branch(branch=branch_london, transfer_branch=branch_sheffield)
     assert branch_london not in bank.branches
